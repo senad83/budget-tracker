@@ -15,6 +15,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+
+// creating alternative external/local route
 var dataBaseURL = process.env.MONGODB_URI || "mongodb://localhost/budget"
 mongoose.connect(dataBaseURL,{
   useNewUrlParser: true,
