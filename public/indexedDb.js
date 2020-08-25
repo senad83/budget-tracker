@@ -19,24 +19,6 @@ request.onsuccess = function (e) {
   tx = db.transaction(storeName, "readwrite");
   store = tx.objectStore(storeName);
 
-  // db.onerror = function (e) {
-  //   console.log("error");
-  // };
-  // if (method === "put") {
-  //   store.put(object);
-  // }
-  // if (method === "clear") {
-  //   store.clear();
-  // }
-  // if (method === "get") {
-  //   const all = store.getAll();
-  //   all.onsuccess = function () {
-  //     resolve(all.result);
-  //   };
-  // }
-  // tx.oncomplete = function () {
-  //   db.close();
-  // };
 };
 
 function saveRecord (transaction){
