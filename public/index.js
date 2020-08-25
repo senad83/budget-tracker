@@ -8,7 +8,7 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     transactions = data;
-
+console.log (transactions)
     populateTotal();
     populateTable();
     populateChart();
@@ -17,6 +17,7 @@ fetch("/api/transaction")
 function populateTotal() {
   // reduce transaction amounts to a single total value
   let total = transactions.reduce((total, t) => {
+
     return total + parseInt(t.value);
   }, 0);
 
@@ -125,6 +126,7 @@ function sendTransaction(isAdding) {
     return response.json();
   })
   .then(data => {
+    console.log("Success")
     if (data.errors) {
       errorEl.textContent = "Missing Information";
     }
@@ -135,6 +137,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+    console.log ("fail")
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 
